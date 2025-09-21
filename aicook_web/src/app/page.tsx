@@ -1,5 +1,5 @@
 import { AnimatedWelcome } from "@/components/animations";
-import BotAndRecipes from "@/components/bot&recipes";
+import AiAndRecipes from "@/components/aiAndRecipes";
 import LandingPage from "@/components/landing";
 import Product from "@/components/product";
 
@@ -8,8 +8,8 @@ export default function HomePage() {
     <div>
       <AnimatedWelcome/>
       <LandingPage />
-      <BotAndRecipes />
       <Product />
+      <AiAndRecipes />
     </div>
   );
 }

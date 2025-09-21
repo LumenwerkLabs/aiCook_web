@@ -31,7 +31,7 @@ export enum SupportedLocales {
       title: string
       subtitle: string
     }
-    botAndRecipes: {
+    aiAndRecipes: {
       title: string
       subtitle: string
       headers: Record<string, string>
@@ -63,11 +63,11 @@ export enum SupportedLocales {
     | 'animations.subtitle'
     | 'landing.title'
     | 'landing.subtitle'
-    | 'botAndRecipes.title'
-    | 'botAndRecipes.subtitle'
-    | `botAndRecipes.headers.${string}`
-    | `botAndRecipes.descriptions.${string}`
-    | `botAndRecipes.tags.${string}`
+    | 'aiAndRecipes.title'
+    | 'aiAndRecipes.subtitle'
+    | `aiAndRecipes.headers.${string}`
+    | `aiAndRecipes.descriptions.${string}`
+    | `aiAndRecipes.tags.${string}`
     | 'product.title'
     | 'product.subtitle'
     | `product.headers.${string}`

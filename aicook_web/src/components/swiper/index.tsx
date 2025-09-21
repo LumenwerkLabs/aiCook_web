@@ -77,10 +77,17 @@ export default function Swiper({ slides, descriptions }: SwiperProps) {
     },
   };
 
+  // Check if current slide has dual images (slide 3 in your case)
+  const isDualImageSlide = currentIndex === 2; // 0-based index for the third slide
+
   return (
-    <div className="flex flex-col lg:flex-row w-full max-w-7xl mx-auto items-center justify-center px-4 sm:px-6 lg:px-8 py-10 sm:py-14 md:py-18 lg:py-24">
+    <div className={`flex flex-col lg:flex-row w-full max-w-7xl mx-auto items-center justify-center px-4 sm:px-6 lg:px-8 py-10 sm:py-14 md:py-18 lg:py-24 ${
+      isDualImageSlide 
+        ? 'gap-30 lg:gap-34 xl:gap-38 2xl:gap-42' 
+        : 'gap-8 lg:gap-12 xl:gap-16'
+    }`}>
       
-      {/* Image Section */}
+      {/* Image Section - Expanded for dual images */}
       <div className="w-full lg:w-1/2 xl:w-2/5 flex items-center justify-center relative">
         
         {/* Subtle Background Elements */}
@@ -89,8 +96,8 @@ export default function Swiper({ slides, descriptions }: SwiperProps) {
           <div className="absolute bottom-16 left-16 w-32 h-32 bg-gradient-to-tr from-[#284139]/3 to-transparent rounded-full blur-xl"></div>
         </div>
 
-        {/* Main Slide Container */}
-        <div className="relative w-full max-w-md lg:max-w-lg xl:max-w-xl h-[400px] sm:h-[480px] md:h-[540px] lg:h-[600px] flex items-center justify-center" style={{ perspective: '800px' }}>
+        {/* Main Slide Container - Enhanced padding and spacing */}
+        <div className="relative w-full max-w-lg lg:max-w-xl xl:max-w-2xl h-[440px] sm:h-[520px] md:h-[580px] lg:h-[640px] xl:h-[680px] flex items-center justify-center px-2 sm:px-4 md:px-6" style={{ perspective: '800px' }}>
           <AnimatePresence mode="wait" custom={direction}>
             <motion.div
               key={currentIndex}
@@ -109,7 +116,7 @@ export default function Swiper({ slides, descriptions }: SwiperProps) {
               onMouseEnter={() => setIsAutoPlaying(false)}
               onMouseLeave={() => setIsAutoPlaying(true)}
             >
-              <div className="relative">
+              <div className="relative w-full h-full flex items-center justify-center px-3 sm:px-4 md:px-6 lg:px-8">
                 {/* Image Container */}
                 <motion.div
                   whileHover={{ scale: 1.01 }}
@@ -118,7 +125,7 @@ export default function Swiper({ slides, descriptions }: SwiperProps) {
                     ease: "easeOut",
                     type: "tween"
                   }}
-                  className="relative transform-gpu will-change-transform mb-12"
+                  className="relative transform-gpu will-change-transform"
                   style={{ 
                     backfaceVisibility: 'hidden',
                     perspective: '1000px'
@@ -132,8 +139,8 @@ export default function Swiper({ slides, descriptions }: SwiperProps) {
         </div>
       </div>
 
-      {/* Enhanced Description Container with Responsive Spacing */}
-      <div className="w-full lg:w-1/2 xl:w-3/5 flex flex-col items-start justify-center mt-18 lg:mt-0 lg:ml-12 xl:ml-16">
+      {/* Enhanced Description Container with Better Spacing */}
+      <div className="w-full lg:w-1/2 xl:w-3/5 flex flex-col items-start justify-center mt-8 lg:mt-0">
         <motion.div
           layout
           className="relative w-full"
