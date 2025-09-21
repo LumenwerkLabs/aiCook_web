@@ -165,7 +165,7 @@ export default function Product() {
           {isReady ? t('product.descriptions.6', 'Need a smart shopping list?') : 'Need a smart shopping list?'}
         </p>
         <p className="text-xs xs:text-sm sm:text-base md:text-lg lg:text-xl text-[#284139]/70 leading-relaxed font-light">
-          {isReady ? t('product.descriptions.7', 'ai.Cook keeps track of your ingredients, their freshness, and availability, and alerts you when you\'re running low on something.') : 'ai.Cook keeps track of your ingredients, their freshness, and availability, and alerts you when you\'re running low on something.'}
+          {isReady ? t('product.descriptions.7', 'ai.Cook keeps track of your ingredients, their freshness, and availability, and alerts you when you&apos;re running low on something.') : 'ai.Cook keeps track of your ingredients, their freshness, and availability, and alerts you when you&apos;re running low on something.'}
         </p>
       </div>
       <div className="flex flex-wrap gap-1.5 sm:gap-2 mt-4 sm:mt-6">
@@ -184,7 +184,7 @@ export default function Product() {
       </h2>
       <div className="space-y-4 sm:space-y-5">
         <p className="text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl text-[#284139]/80 leading-relaxed font-light">
-          We think privacy and data protection matter, that's why ai.Cook is powered by Apple Intelligence LLMs, which live at the core of your iPhone.
+          We think privacy and data protection matter, that&apos;s why ai.Cook is powered by Apple Intelligence LLMs, which live at the core of your iPhone.
         </p>
         <p className="text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl text-[#284139]/80 leading-relaxed font-light">
           No data leaves your device. No ads. No tracking. Works completely offline.
