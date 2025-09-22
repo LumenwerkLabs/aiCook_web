@@ -29,7 +29,6 @@ export default function AiAndRecipes() {
       
     // Slide 2 - Dual Images (AI Recipes Dialog + Substitution Dialog)
     <div key="ai-duo" className="stable-image-container">
-      <div className="flex flex-row gap-4 md:gap-6 lg:gap-8 justify-center items-center w-full max-w-4xl">
         <Image
           src="/mockups/ai_recipes_dialog.png"
           alt="Recipes Screen"
@@ -44,7 +43,6 @@ export default function AiAndRecipes() {
           width={360}
           height={640}
         />
-      </div>
     </div>,
     
     // Slide 3 - Recipe Steps
@@ -60,7 +58,6 @@ export default function AiAndRecipes() {
     
     // Slide 4 - Dual Images (Recipe Card + Steps Dialog)
     <div key="recipes-duo" className="stable-image-container">
-      <div className="flex flex-row gap-4 md:gap-6 lg:gap-8 justify-center items-center w-full max-w-4xl">
         <Image
           src="/mockups/recipes_screen.png"
           alt="Recipe Card Screen"
@@ -75,7 +72,6 @@ export default function AiAndRecipes() {
           width={360}
           height={640}
         />
-      </div>
     </div>,
     
     // Slide 5 - Community Widget

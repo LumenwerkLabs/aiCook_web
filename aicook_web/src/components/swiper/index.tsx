@@ -142,7 +142,7 @@ export default function Swiper({ slides, descriptions }: SwiperProps) {
         </div>
 
         {/* Description Container - Using standardized card class */}
-        <div className="w-full flex flex-col items-start justify-center order-2 lg:order-2">
+        <div className="w-full flex flex-col items-start justify-center order-2 lg:order-2 mt-20 sm:mt-22 lg:mt-24">
           <motion.div layout className="relative w-full">
             {/* Standardized Glass Container */}
             <div className="description-card group">

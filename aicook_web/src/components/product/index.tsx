@@ -41,7 +41,6 @@ export default function Product() {
     
     // Slide 3 - Dual Images (Add Ingredient Dialogs)
     <div key="adding-duo" className="stable-image-container">
-      <div className="flex flex-row gap-4 md:gap-6 lg:gap-8 justify-center items-center w-full max-w-4xl">
         <Image
           src="/mockups/add_global_ing_dialog.png"
           alt="Add Global Ingredient Dialog"
@@ -56,7 +55,6 @@ export default function Product() {
           width={360}
           height={640}
         />
-      </div>
     </div>,
     
     // Slide 4 - Smart Shopping List
@@ -225,7 +223,7 @@ export default function Product() {
       
       <FadeInMotion>
         <div className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-24 sm:mb-28 lg:mb-32">
+          <div className="text-center mb-24 sm:mb-24 lg:mb-28">
             <h1 className="heading-hero font-melodrama-medium text-[#284139] mb-6 leading-tight">
               {isReady ? t('product.title', 'Discover ai.Cook') : 'Discover ai.Cook'}
             </h1>

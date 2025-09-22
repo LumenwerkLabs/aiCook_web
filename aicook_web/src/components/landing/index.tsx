@@ -50,7 +50,6 @@ export default function LandingPage() {
                   className="image-single drop-shadow-2xl"
                   width={360}
                   height={640}
-                  style={{ width: 'auto', height: 'auto', maxWidth: 'clamp(160px, 20vw, 320px)' }}
                   priority
                 />
               </motion.div>

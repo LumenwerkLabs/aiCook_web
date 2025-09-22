@@ -179,7 +179,7 @@ body {
 .image-dual {
   width: 100%;
   height: auto;
-  max-width: var(--image-dual);
+  min-width: var(--image-dual);
   object-fit: contain;
   filter: drop-shadow(0 25px 25px rgb(0 0 0 / 0.15));
 }
@@ -212,9 +212,21 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: clamp(400px, 60vh, 600px); /* Increased responsive height */
+  /* Tie height to width to avoid huge VH on mobile/desktop */
+  min-height: clamp(320px, 55vw, 620px);
   position: relative;
-  z-index: 10; /* Ensure proper layering */
+  z-index: 1; /* Lower stacking to avoid overlaying siblings */
+  overflow: visible; /* Allow full image visibility */
+  isolation: isolate; /* Contain stacking context for absolutely positioned children */
+}
+
+.stable-image-container .image-dual {
+  max-width: var(--image-dual);
+  height: auto;
+  margin-right: 7rem;
+  margin-left: -5rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
 /* Tag standardization */
@@ -254,7 +266,9 @@ body {
   max-width: 1280px;
   margin: 0 auto;
   min-height: clamp(400px, 60vh, 800px); /* Ensure minimum height on all devices */
-  padding: clamp(1rem, 4vw, 2rem); /* Add responsive padding */}
+  padding: clamp(1rem, 4vw, 2rem); /* Add responsive padding */
+  overflow: visible; /* Avoid clipping tall mockups */
+}
 
 @media (min-width: 1024px) {
   .swiper-layout {
@@ -296,12 +310,26 @@ body {
   }
   
   .stable-image-container {
-    min-height: 300px;
+    min-height: clamp(420px, 95vw, 560px);
+  }
+
+  .stable-image-container .image-dual {
+    padding: 1rem;
+    height: auto;
+    margin-right: -1rem;
+    margin-left: -1rem;
+  }
+
+  /* Add breathing room below image stack to avoid overlap with text */
+  .swiper-layout {
+    gap: calc(var(--content-gap) * 1.25);
+    padding-bottom: clamp(2.5rem, 10vw, 4rem); /* Extra room so images don't overlap text */
   }
   .stable-image-container img {
     max-width: 100%;
     height: auto;
   }
+
 }
 
 /* Medium screens (tablet) */
@@ -314,7 +342,7 @@ body {
   }
   
   .stable-image-container {
-    min-height: 350px;
+    min-height: clamp(440px, 60vw, 600px);
   }
 }
 
@@ -328,21 +356,11 @@ body {
   }
   
   .stable-image-container {
-    min-height: 450px;
+    min-height: clamp(480px, 45vw, 680px);
   }
 }
 
-@media (max-width: 768px) {
-  .swiper-layout {
-    gap: clamp(1rem, 4vw, 2rem);
-    grid-template-columns: 1fr; /* Force single column on mobile */
-  }
-  
-  .description-card {
-    min-height: auto; /* Allow flexible height on mobile */
-    padding: clamp(1rem, 4vw, 1.5rem);
-  }
-}
+
 
 /* ===== SCROLLBAR STYLING ===== */
 ::-webkit-scrollbar {
