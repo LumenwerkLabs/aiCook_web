@@ -16,7 +16,7 @@ const inter = Inter({
 });
 
 export const metadata = {
-  metadataBase: new URL(process.env.NODE_ENV === 'production' ? 'https://ai-cook.app' : 'http://localhost:3000'),
+  metadataBase: new URL(process.env.NODE_ENV === 'production' ? 'https://aicook.website' : 'http://localhost:3000'),
   title: {
     default: 'ai.Cook - Your AI-Powered Culinary Assistant',
     template: '%s | ai.Cook'
@@ -175,7 +175,7 @@ export default function RootLayout({
               "@type": "WebApplication",
               "name": "ai.Cook",
               "description": "AI-powered cooking assistant for personalized recipe recommendations and smart ingredient management",
-              "url": "https://ai-cook.app",
+              "url": "https://aicook.website",
               "applicationCategory": "LifestyleApplication",
               "operatingSystem": "iOS, Android, Web",
               "offers": {
