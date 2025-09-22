@@ -6,6 +6,7 @@ import Footer from '@/components/footer';
 import CookingBackgroundAnimation from '@/components/animations/CookingBackgroundAnimation';
 import IProvider from '@/context/I18nContext';
 import { Inter } from 'next/font/google';
+import Script from 'next/script';
 
 // Optimize font loading with Next.js built-in optimization
 const inter = Inter({
@@ -18,10 +19,10 @@ const inter = Inter({
 export const metadata = {
   metadataBase: new URL(process.env.NODE_ENV === 'production' ? 'https://aicook.website' : 'http://localhost:3000'),
   title: {
-    default: 'ai.Cook - Your AI-Powered Culinary Assistant',
+    default: 'ai.Cook - AI-Powered Culinary Assistant & Smart Recipe Finder',
     template: '%s | ai.Cook'
   },
-  description: 'Transform your cooking with AI-powered recipe recommendations, smart ingredient management, and personalized meal planning. Discover perfect recipes tailored to your preferences and available ingredients.',
+  description: 'Transform your cooking with AI-powered recipe recommendations, smart ingredient management, and personalized meal planning for your kitchen.',
   keywords: [
     'ai.Cook', 
     'AI cooking assistant', 
@@ -47,6 +48,9 @@ export const metadata = {
       'max-snippet': -1,
     },
   },
+  alternates: {
+    canonical: '/',
+  },
   icons: {
     icon: [
       { url: '/favicon.svg', type: 'image/svg+xml' },
@@ -62,8 +66,8 @@ export const metadata = {
     type: 'website',
     locale: 'en_US',
     url: '/',
-    title: 'ai.Cook - Your AI-Powered Culinary Assistant',
-    description: 'Transform your cooking with AI-powered recipe recommendations and smart ingredient management.',
+    title: 'ai.Cook - AI-Powered Culinary Assistant & Smart Recipe Finder',
+    description: 'Transform your cooking with AI-powered recipe recommendations and smart ingredient management for your kitchen.',
     siteName: 'ai.Cook',
     images: [
       {
@@ -76,8 +80,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'ai.Cook - Your AI-Powered Culinary Assistant',
-    description: 'Transform your cooking with AI-powered recipe recommendations and smart ingredient management.',
+    title: 'ai.Cook - AI-Powered Culinary Assistant & Smart Recipe Finder',
+    description: 'Transform your cooking with AI-powered recipe recommendations and smart ingredient management for your kitchen.',
     images: ['/og-image.jpg'],
     creator: '@aiCookApp',
   },
@@ -106,11 +110,11 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         
-        {/* DNS prefetch for potential third-party resources */}
+        {/* DNS prefetch */}
         <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
         <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
         
-        {/* Preload critical fonts - updated for better design system integration */}
+        {/* Preload critical fonts */}
         <link 
           rel="preload" 
           href="/fonts/Melodrama-Regular.otf" 
@@ -132,12 +136,26 @@ export default function RootLayout({
           type="font/otf" 
           crossOrigin="anonymous" 
         />
+
+        {/* Google Analytics with Next.js Script */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-SKEW623NK8"
+          strategy="afterInteractive"
+        />
+        <Script id="gtag-init" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-SKEW623NK8');
+          `}
+        </Script>
       </head>
       <body className="antialiased">
         {/* Performance monitoring */}
         <SpeedInsights />
         
-        {/* Skip to main content for accessibility - using design system colors */}
+        {/* Skip to main content for accessibility */}
         <a 
           href="#main-content" 
           className="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-50 btn-base focus:bg-[#284139] focus:text-[#E8E4D9] focus:rounded-md focus:outline-none focus:ring-2 focus:ring-[#E8E4D9]"
@@ -145,23 +163,18 @@ export default function RootLayout({
           Skip to main content
         </a>
 
-        {/* Background animation with reduced motion support */}
+        {/* Background animation */}
         <div className="fixed inset-0 z-0" aria-hidden="true">
           <CookingBackgroundAnimation />
         </div>
 
-        {/* Main application container with design system integration */}
+        {/* Main app container */}
         <div className="relative z-10 min-h-screen flex flex-col">
           <IProvider>
-            {/* Header */}
             <Header />
-            
-            {/* Main content with semantic HTML */}
             <main id="main-content" className="flex-1" role="main">
               {children}
             </main>
-            
-            {/* Footer */}
             <Footer />
           </IProvider>
         </div>
@@ -170,25 +183,57 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "WebApplication",
-              "name": "ai.Cook",
-              "description": "AI-powered cooking assistant for personalized recipe recommendations and smart ingredient management",
-              "url": "https://aicook.website",
-              "applicationCategory": "LifestyleApplication",
-              "operatingSystem": "iOS, Android, Web",
-              "offers": {
-                "@type": "Offer",
-                "price": "0",
-                "priceCurrency": "USD"
+            __html: JSON.stringify([
+              {
+                "@context": "https://schema.org",
+                "@type": "WebApplication",
+                "name": "ai.Cook",
+                "alternateName": "AI Cook",
+                "description": "AI-powered cooking assistant for personalized recipe recommendations, smart ingredient management, and meal planning",
+                "url": "https://aicook.website",
+                "applicationCategory": "LifestyleApplication",
+                "operatingSystem": "iOS, Android, Web",
+                "browserRequirements": "Requires JavaScript. Requires HTML5.",
+                "softwareVersion": "1.0",
+                "releaseNotes": "Initial release with AI-powered recipe recommendations",
+                "offers": {
+                  "@type": "Offer",
+                  "price": "0",
+                  "priceCurrency": "USD",
+                  "availability": "https://schema.org/InStock"
+                },
+                "creator": {
+                  "@type": "Person",
+                  "name": "Lucia Schlegel",
+                  "url": "https://github.com/LuciaSchlegel"
+                },
+                "publisher": {
+                  "@type": "Organization",
+                  "name": "ai.Cook",
+                  "url": "https://aicook.website"
+                },
+                "featureList": [
+                  "AI-powered recipe recommendations",
+                  "Smart ingredient management", 
+                  "Personalized meal planning",
+                  "Nutritional goal tracking",
+                  "Recipe discovery based on available ingredients"
+                ],
+                "screenshot": "https://aicook.website/og-image.jpg"
               },
-              "creator": {
-                "@type": "Person",
-                "name": "Lucia Schlegel",
-                "url": "https://github.com/LuciaSchlegel"
+              {
+                "@context": "https://schema.org",
+                "@type": "Organization",
+                "name": "ai.Cook",
+                "url": "https://aicook.website",
+                "logo": "https://aicook.website/favicon.svg",
+                "foundingDate": "2024",
+                "description": "AI-powered cooking assistant platform",
+                "sameAs": [
+                  "https://twitter.com/aiCookApp"
+                ]
               }
-            })
+            ])
           }}
         />
       </body>
