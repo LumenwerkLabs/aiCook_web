@@ -62,20 +62,21 @@
     "title": "The Only Cookbook You'll Ever Need",
     "subtitle": "Discover personalized recipes tailored to your pantry and preferences. All displayed in a beautiful, state-of-the-art user interface.",
     "headers": {
-      "1": "Restaurant-quality recipes",
-      "2": "Beautiful UI",
-      "3": "Smart Recommendations",
-      "4": "Your Personalized Cookbook"
+      "1": "Smart Recommendations",
+      "2": "Tailored-to-you Recipes",
+      "3": "Restaurant-quality Results",
+      "4": "Your Personalized Cookbook",
+      "5": "Save and Share"
     },
     "descriptions": {
-      "1": "ai.Cook recipes are one-by-one curated and updated to accomplish the highest standards.",
-      "2": "They must make sense for you, your time, skills, preferences and ingredients - while maintaining the excellence of the final result. That's why the recipes themselves are human-created and reviewed. We all love AI, but we love the human touch even more.",
-      "3": "Our smart algorithms and AI help you by finding through thousands of recipes, the ones that match with you the most.",
-      "4": "Our recipes are designed to be as beautiful as they are delicious: clear, visual, and effortless to follow.",
-      "5": "Enter your available time, preferred difficulty level and any additional preferences, and let ai.Cook handle the rest.",
-      "6": "In a matter of seconds, you'll get easy-to-follow recipes that match the most with your available ingredients and preferences.",
-      "7": "You can also explore variations, ingredient swaps, and pro culinary tips.",
-      "8": "Save your favorite recipes, and organize your cookbook effortlessly by categories, diets, and more."
+      "1": "Enter your available time, preferred difficulty level and any additional preferences, and let ai.Cook handle the rest.",
+      "2": "The combination of our smart algorithms and AI help you by finding through thousands of recipes, the ones that match with you the most.",
+      "3": "In a matter of seconds, you'll get easy-to-follow recipes that match the most with your available ingredients and preferences.",
+      "4": "You can also explore variations, ingredient swaps, and pro culinary tips.",
+      "5": "ai.Cook recipes are one-by-one curated and updated to accomplish the highest taste standards.",
+      "6": "They must make sense for you, your time, skills, preferences and ingredients - while maintaining the excellence of the final result. That's why the recipes themselves are human-created and reviewed. We all love AI, but we love the human touch even more.",
+      "7": "Our recipes are designed to be as beautiful as they are delicious: clear, visual, and effortless to follow. Organize your cookbook effortlessly by categories, diets, and more.",
+      "8": "Save or share your favorite recipes with the ai.Cook community."
     },
     "tags": {
       "1": "High-quality recipes",
@@ -85,8 +86,10 @@
       "5": "Smart Substitutions",
       "6": "Easy to Follow",
       "7": "Categorized Recipes",
-      "8": "Smart Shopping Lists",
-      "9": "Diet Support"
+      "8": "Cooking Tips",
+      "9": "Diet Support",
+      "10": "Community-driven",
+      "11": "Shopping Help"
     }
   },
 

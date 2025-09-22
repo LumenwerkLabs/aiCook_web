@@ -49,12 +49,12 @@ export default function Header() {
           : '1px solid rgba(40, 65, 57, 0.03)'
       }}
     >
-      <div className="flex justify-between items-center p-3 xs:p-4 sm:p-5 lg:p-6 transition-all duration-500 max-w-7xl mx-auto">
+      <div className="flex justify-between items-center px-4 py-3 sm:px-6 sm:py-4 lg:px-8 lg:py-5 transition-all duration-500 max-w-7xl mx-auto">
         {/* Left Navigation */}
         <Link
           href="/#bot-and-recipes"
           onClick={handleSmoothScroll}
-          className="text-xs xs:text-sm sm:text-base md:text-lg lg:text-xl transition-all duration-300 hover:scale-105 active:scale-95 text-[#284139] font-light tracking-wide"
+          className="text-body-small transition-all duration-300 hover:scale-105 active:scale-95 text-[#284139] font-light tracking-wide"
           style={{ textShadow: '0 1px 2px rgba(40, 65, 57, 0.1)' }}
         >
           {isReady ? t('navigation.sneakPeek', 'sneak peek') : 'sneak peek'}
@@ -63,7 +63,7 @@ export default function Header() {
         {/* Center Content - Email Link */}
         <Link
           href="mailto:jointhewaitlist@aicook.com"
-          className="text-xs xs:text-sm sm:text-base md:text-lg lg:text-xl transition-all duration-300 hover:scale-105 active:scale-95 text-[#284139] font-light tracking-wide text-center px-2 max-w-[45vw] xs:max-w-[55vw] sm:max-w-none truncate"
+          className="text-body-small transition-all duration-300 hover:scale-105 active:scale-95 text-[#284139] font-light tracking-wide text-center px-2 max-w-[45vw] sm:max-w-none truncate"
           style={{
             textShadow: '0 1px 2px rgba(40, 65, 57, 0.1)',
           }}
@@ -80,11 +80,11 @@ export default function Header() {
         </Link>
 
         {/* Right Section - About Link and Language Selector */}
-        <div className="flex items-center gap-2 xs:gap-3 sm:gap-4 lg:gap-6">
+        <div className="flex items-center gap-3 sm:gap-4 lg:gap-6">
           <Link
             href="/#product"
             onClick={handleSmoothScroll}
-            className="text-xs xs:text-sm sm:text-base md:text-lg lg:text-xl transition-all duration-300 hover:scale-105 active:scale-95 text-[#284139] font-light tracking-wide"
+            className="text-body-small transition-all duration-300 hover:scale-105 active:scale-95 text-[#284139] font-light tracking-wide"
             style={{ textShadow: '0 1px 2px rgba(40, 65, 57, 0.1)' }}
           >
             {isReady ? t('navigation.about', 'about') : 'about'}

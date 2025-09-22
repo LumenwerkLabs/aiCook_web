@@ -1,5 +1,5 @@
 // src/components/LanguageSelector.tsx
-import { useIContext } from '@/context/I18nContext'
+import { useI18nContext } from '@/context/I18nContext'
 import { SupportedLocales } from '@/types/i18n'
 import React, { useState, useRef, useEffect } from 'react'
 
@@ -18,7 +18,7 @@ const LanguageSelector: React.FC<LanguageSelectorProps> = ({
     getAvailableLanguages, 
     getCurrentLanguage,
     isLoading 
-  } = useIContext()
+  } = useI18nContext()
   
   const [isOpen, setIsOpen] = useState(false)
   const dropdownRef = useRef<HTMLDivElement>(null)
@@ -53,7 +53,7 @@ const LanguageSelector: React.FC<LanguageSelectorProps> = ({
         onChange={(e) => handleLanguageSelect(e.target.value as SupportedLocales)}
         disabled={isLoading}
         className={`
-          text-xs xs:text-sm sm:text-base md:text-lg lg:text-xl 
+          text-body-small
           transition-all duration-300 hover:scale-105 active:scale-95 
           text-[#284139] font-light tracking-wide
           bg-transparent border-none outline-none cursor-pointer
@@ -81,17 +81,14 @@ const LanguageSelector: React.FC<LanguageSelectorProps> = ({
   // Button group variant - styled to match header
   if (variant === 'buttons') {
     return (
-      <div className={`flex gap-1 xs:gap-1.5 sm:gap-2 ${className}`}>
+      <div className={`flex gap-1 sm:gap-2 ${className}`}>
         {languages.map((lang) => (
           <button
             key={lang.code}
             onClick={() => handleLanguageSelect(lang.code)}
             disabled={isLoading}
             className={`
-              px-2 xs:px-2.5 sm:px-3 py-1 xs:py-1.5 
-              text-xs xs:text-sm sm:text-base 
-              font-light tracking-wide rounded-full
-              transition-all duration-300 hover:scale-105 active:scale-95 
+              tag-base
               disabled:opacity-50 disabled:cursor-not-allowed
               ${
                 locale === lang.code
@@ -101,7 +98,7 @@ const LanguageSelector: React.FC<LanguageSelectorProps> = ({
             `}
             style={{ textShadow: '0 1px 2px rgba(40, 65, 57, 0.1)' }}
           >
-            <span className="text-sm xs:text-base">{lang.flag}</span>
+            <span className="text-sm sm:text-base">{lang.flag}</span>
           </button>
         ))}
       </div>
@@ -116,12 +113,12 @@ const LanguageSelector: React.FC<LanguageSelectorProps> = ({
         disabled={isLoading}
         className={`
           inline-flex items-center justify-center
-          text-xs xs:text-sm sm:text-base md:text-lg lg:text-xl
+          text-body-small
           transition-all duration-300 hover:scale-105 active:scale-95 
           text-[#284139] font-light tracking-wide
           bg-transparent border-none outline-none cursor-pointer
           disabled:opacity-50 disabled:cursor-not-allowed
-          px-2 xs:px-3 py-1 xs:py-1.5
+          px-2 sm:px-3 py-1 sm:py-1.5
           rounded-full hover:bg-[#284139]/5
         `}
         style={{ textShadow: '0 1px 2px rgba(40, 65, 57, 0.1)' }}
@@ -130,12 +127,12 @@ const LanguageSelector: React.FC<LanguageSelectorProps> = ({
         type="button"
       >
         {isLoading ? (
-          <div className="animate-spin rounded-full h-3 w-3 xs:h-4 xs:w-4 border border-[#284139] border-t-transparent mr-2" />
+          <div className="animate-spin rounded-full h-3 w-3 sm:h-4 sm:w-4 border border-[#284139] border-t-transparent mr-2" />
         ) : (
-          <span className="mr-1 xs:mr-2 text-sm xs:text-base sm:text-lg">{currentLang?.flag}</span>
+          <span className="mr-1 sm:mr-2 text-sm sm:text-base">{currentLang?.flag}</span>
         )}
         <svg
-          className={`w-3 h-3 xs:w-4 xs:h-4 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`}
+          className={`w-3 h-3 sm:w-4 sm:h-4 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`}
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -152,7 +149,7 @@ const LanguageSelector: React.FC<LanguageSelectorProps> = ({
           
           {/* Dropdown menu */}
           <div 
-            className="absolute right-0 z-50 w-44 xs:w-48 sm:w-52 mt-2 origin-top-right"
+            className="absolute right-0 z-50 w-44 sm:w-48 lg:w-52 mt-2 origin-top-right"
             style={{
               backgroundColor: 'rgba(232, 228, 217, 0.95)',
               backdropFilter: 'blur(16px)',
@@ -169,8 +166,8 @@ const LanguageSelector: React.FC<LanguageSelectorProps> = ({
                   onClick={() => handleLanguageSelect(language.code)}
                   disabled={isLoading}
                   className={`
-                    flex items-center w-full px-3 xs:px-4 py-2 xs:py-2.5
-                    text-xs xs:text-sm sm:text-base
+                    flex items-center w-full px-3 sm:px-4 py-2 sm:py-2.5
+                    text-caption
                     font-light tracking-wide
                     transition-all duration-200
                     hover:bg-[#284139]/8 focus:bg-[#284139]/8 focus:outline-none 
@@ -185,7 +182,7 @@ const LanguageSelector: React.FC<LanguageSelectorProps> = ({
                   role="menuitem"
                   type="button"
                 >
-                  <span className="mr-2 xs:mr-3 text-base xs:text-lg" aria-hidden="true">
+                  <span className="mr-2 sm:mr-3 text-base lg:text-lg" aria-hidden="true">
                     {language.flag}
                   </span>
                   <div className="flex-grow text-left">
@@ -194,7 +191,7 @@ const LanguageSelector: React.FC<LanguageSelectorProps> = ({
                   </div>
                   {language.code === locale && (
                     <svg 
-                      className="w-3 h-3 xs:w-4 xs:h-4 text-[#284139] ml-2" 
+                      className="w-3 h-3 sm:w-4 sm:h-4 text-[#284139] ml-2" 
                       fill="currentColor" 
                       viewBox="0 0 20 20" 
                       aria-hidden="true"

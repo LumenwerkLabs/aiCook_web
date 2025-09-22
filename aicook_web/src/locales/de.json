@@ -6,86 +6,90 @@
 
   "navigation": {
     "sneakPeek": "exklusive Vorschau",
-    "joinWaitlist": "zur Warteliste hinzufügen",
+    "joinWaitlist": "der Warteliste beitreten",
     "about": "über ai.Cook"
   },
 
   "animations": {
     "title": "ai.Cook",
-    "subtitle": "Ihr persönlicher KI-gestützter kulinarischer Begleiter."
+    "subtitle": "Dein persönlicher KI-gestützter Küchenbegleiter."
   },
 
   "landing": {
-    "title": "entdecken Sie KI in der Küche, ein Rezept nach dem anderen",
-    "subtitle": "demnächst verfügbar"
+    "title": "entdecke KI in der Küche, ein Rezept nach dem anderen",
+    "subtitle": "demnächst"
   },
 
   "product": {
-    "title": "Entdecken Sie ai.Cook",
-    "subtitle": "Erleben Sie die Zukunft des Kochens mit Ihrem KI-gestützten kulinarischen Assistenten",
+    "title": "Entdecke ai.Cook",
+    "subtitle": "Erlebe die Zukunft des Kochens mit deinem KI-gestützten Küchenassistenten",
     "headers": {
-      "1": "Lernen Sie ai.Cook kennen",
-      "2": "Intelligente Zutatenverwaltung",
-      "3": "Ihre Küche. Ihre Regeln.",
-      "4": "Verfolgen Sie Ihre Zutaten wie ein Profi",
+      "1": "Lerne ai.Cook kennen",
+      "2": "Intelligentes Zutaten-Management",
+      "3": "Deine Küche. Deine Regeln.",
+      "4": "Verwalte Deine Zutaten Wie ein Profi",
       "5": "Schnell. Intelligent. Privat"
     },
     "descriptions": {
-      "1": "Wir verschwenden Lebensmittel, wiederholen Mahlzeiten und haben Schwierigkeiten, gesund zu bleiben - alles weil uns intelligente, personalisierte und gezielte Anleitung darüber fehlt, was wir essen sollen.",
-      "2": "Hier kommt ai.Cook ins Spiel. Unser KI-gestützter Assistent lernt aus Ihren Vorlieben, verfügbarer Zeit und Ernährungszielen und hilft Ihnen, perfekte Rezepte zu entdecken.",
-      "3": "Fügen Sie die Zutaten, die Sie haben, schnell und einfach zu Ihrer Speisekammer hinzu. Sie können entweder aus einer reichhaltigen Zutatenliste mit Nährwertinformationen wählen oder Ihre eigenen hinzufügen.",
-      "4": "Erstellen Sie Ihre persönliche Speisekammerliste mit wichtigen oder Lieblingszutaten.",
-      "5": "Sie können sie nach Kategorien, Diäten, Unverträglichkeiten und mehr klassifizieren.",
-      "6": "Brauchen Sie eine intelligente Einkaufsliste?",
-      "7": "ai.Cook verfolgt Ihre Zutaten, ihre Frische und Verfügbarkeit und warnt Sie, wenn Ihnen etwas ausgeht.",
-      "8": "Wir glauben, dass Privatsphäre und Datenschutz wichtig sind, deshalb wird ai.Cook von Apple Intelligence LLMs betrieben, die im Kern Ihres iPhones leben. Keine Daten verlassen Ihr Gerät. Keine Werbung. Kein Tracking."
+      "1": "Wir verschwenden Essen, wiederholen Mahlzeiten und kämpfen darum, gesund zu bleiben - alles weil uns intelligente, personalisierte und zielgerichtete Anleitung fehlt, was wir essen sollen.",
+      "2": "Hier kommt ai.Cook ins Spiel. Unser KI-gestützter Assistent lernt von deinen Vorlieben, verfügbarer Zeit und Ernährungszielen und hilft dir dabei, perfekte Rezepte zu entdecken.",
+      "3": "Füge die Zutaten, die du hast, schnell und einfach zu deiner Speisekammer hinzu. Du kannst entweder aus einer umfangreichen Zutatenliste mit Nährwertangaben wählen oder deine eigenen hinzufügen.",
+      "4": "Erstelle deine persönliche Speisekammer-Liste mit deinen verfügbaren Zutaten.",
+      "5": "Du kannst sie nach Kategorien, Diäten, Unverträglichkeiten und mehr klassifizieren.",
+      "6": "Brauchst du eine intelligente Einkaufsliste?",
+      "7": "ai.Cook behält deine Zutaten, ihre Frische und Verfügbarkeit im Überblick und warnt dich, wenn dir etwas ausgeht.",
+      "8": "Wir glauben, dass Privatsphäre und Datenschutz wichtig sind, deshalb wird ai.Cook von Apple Intelligence LLMs angetrieben, die im Kern deines iPhones leben. Keine Daten verlassen dein Gerät. Keine Werbung. Kein Tracking. Funktioniert vollständig offline."
     },
 
     "tags": {
       "1": "Intelligente Erkennung",
       "2": "Persönliche Vorlieben",
       "3": "Zeitmanagement",
-      "4": "Frischer Inhalt",
+      "4": "Frische Inhalte",
       "5": "Vollständig Personalisiert",
       "6": "Integrierte Hilfe",
       "7": "Intelligente Tipps",
       "8": "Privat",
       "9": "Sicher",
-      "10": "Reichhaltige Datenbank",
-      "11": "Individuelle Zutaten",
-      "12": "Automatische Nährwerte"
+      "10": "Umfangreiche Datenbank",
+      "11": "Benutzerdefinierte Zutaten",
+      "12": "Automatische Nährwerte",
+      "13": "Kategorisierte Zutaten"
     }
   },
 
   "aiAndRecipes": {
-    "title": "Das Einzige Kochbuch, Das Sie Je Brauchen Werden",
-    "subtitle": "Entdecken Sie personalisierte Rezepte, die auf Ihre Speisekammer und Vorlieben zugeschnitten sind. Alles in einer wunderschönen, hochmodernen Benutzeroberfläche dargestellt.",
+    "title": "Das Einzige Kochbuch, Das Du Je Brauchen Wirst",
+    "subtitle": "Entdecke personalisierte Rezepte, die auf deine Speisekammer und Vorlieben zugeschnitten sind. Alles angezeigt in einer wunderschönen, hochmodernen Benutzeroberfläche.",
     "headers": {
-      "1": "Rezepte in Restaurantqualität",
-      "2": "Wunderschöne Benutzeroberfläche",
-      "3": "Intelligente Empfehlungen",
-      "4": "Ihr Personalisiertes Kochbuch"
+      "1": "Intelligente Empfehlungen",
+      "2": "Auf Dich Zugeschnittene Rezepte",
+      "3": "Restaurant-Qualität Ergebnisse",
+      "4": "Dein Personalisiertes Kochbuch",
+      "5": "Speichern und Teilen"
     },
     "descriptions": {
-      "1": "ai.Cook-Rezepte werden einzeln kuratiert und aktualisiert, um die höchsten Standards zu erreichen.",
-      "2": "Sie müssen für Sie, Ihre Zeit, Fähigkeiten, Vorlieben und Zutaten sinnvoll sein - während sie die Exzellenz des Endergebnisses beibehalten. Deshalb sind die Rezepte selbst von Menschen erstellt und überprüft. Wir alle lieben KI, aber wir lieben die menschliche Note mehr.",
-      "3": "Unsere intelligenten Algorithmen und KI helfen Ihnen, indem sie aus Tausenden von Rezepten diejenigen finden, die am besten zu Ihnen passen.",
-      "4": "Unsere Rezepte sind so schön wie köstlich gestaltet: klar, visuell und mühelos zu befolgen.",
-      "5": "Geben Sie Ihre verfügbare Zeit, den bevorzugten Schwierigkeitsgrad und zusätzliche Vorlieben ein, und lassen Sie ai.Cook den Rest übernehmen.",
-      "6": "In wenigen Sekunden erhalten Sie leicht zu befolgende Rezepte, die am besten zu Ihren verfügbaren Zutaten und Vorlieben passen.",
-      "7": "Sie können auch Variationen, Zutatenaustausch und professionelle kulinarische Tipps erkunden.",
-      "8": "Speichern Sie Ihre Lieblingsrezepte und organisieren Sie Ihr Kochbuch mühelos nach Kategorien, Diäten und mehr."
+      "1": "Gib deine verfügbare Zeit, bevorzugten Schwierigkeitsgrad und zusätzliche Vorlieben ein und lass ai.Cook den Rest erledigen.",
+      "2": "Die Kombination unserer intelligenten Algorithmen und KI hilft dir dabei, unter Tausenden von Rezepten diejenigen zu finden, die am besten zu dir passen.",
+      "3": "In Sekundenschnelle erhältst du leicht zu befolgende Rezepte, die am besten mit deinen verfügbaren Zutaten und Vorlieben übereinstimmen.",
+      "4": "Du kannst auch Variationen, Zutaten-Austausche und professionelle Kochtipps erkunden.",
+      "5": "ai.Cook Rezepte werden einzeln kuratiert und aktualisiert, um höchste Geschmacksstandards zu erreichen.",
+      "6": "Sie müssen für dich, deine Zeit, Fähigkeiten, Vorlieben und Zutaten sinnvoll sein - während die Exzellenz des Endergebnisses beibehalten wird. Deshalb sind die Rezepte selbst von Menschen erstellt und überprüft. Wir alle lieben KI, aber wir lieben die menschliche Note noch mehr.",
+      "7": "Unsere Rezepte sind so schön wie köstlich gestaltet: klar, visuell und mühelos zu befolgen. Organisiere dein Kochbuch mühelos nach Kategorien, Diäten und mehr.",
+      "8": "Speichere oder teile deine Lieblingsrezepte mit der ai.Cook Community."
     },
     "tags": {
       "1": "Hochwertige Rezepte",
       "2": "KI-gestützt",
       "3": "Von Menschen erstellt und überprüft",
       "4": "Personalisierte Empfehlungen",
-      "5": "Intelligente Ersetzungen",
-      "6": "Leicht zu Befolgen",
+      "5": "Intelligente Substitutionen",
+      "6": "Einfach zu Befolgen",
       "7": "Kategorisierte Rezepte",
-      "8": "Intelligente Einkaufslisten",
-      "9": "Diät-Unterstützung"
+      "8": "Koch-Tipps",
+      "9": "Diät-Unterstützung",
+      "10": "Community-getrieben",
+      "11": "Einkaufshilfe"
     }
   },
 
