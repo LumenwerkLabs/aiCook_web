@@ -231,7 +231,7 @@ body {
   gap: var(--content-gap);
 }
 
-/* Enhanced container classes - Balanced height approach for 1350x2760 mockups */
+/* Enhanced container classes - Balanced approach for mobile */
 .stable-image-container {
   width: 100%;
   display: flex;
@@ -246,6 +246,17 @@ body {
   padding: clamp(1.5rem, 3vw, 2.5rem) clamp(1rem, 2vw, 2rem);
 }
 
+/* Mobile-specific container adjustments */
+@media (max-width: 767px) {
+  .stable-image-container {
+    margin-bottom: clamp(1.5rem, 4vw, 2rem);
+  }
+  
+  .stable-image-container:has(.image-dual) {
+    margin-bottom: clamp(2rem, 5vw, 2.5rem);
+  }
+}
+
 /* Single image containers */
 .stable-image-container .image-single,
 .stable-image-container .image-large {
@@ -254,6 +265,7 @@ body {
   max-width: var(--image-single);
   filter: drop-shadow(0 25px 25px rgb(0 0 0 / 0.15));
   will-change: transform;
+
 }
 
 /* Dual image container specific styling */
@@ -272,16 +284,6 @@ body {
   margin: 0;
   flex-shrink: 1;
   min-height: clamp(500px, 60vh, 750px);
-}
-
-.stable-image-container .image-dual {
-  width: 100%;
-  height: auto;
-  max-width: var(--image-dual);
-  filter: drop-shadow(0 25px 25px rgb(0 0 0 / 0.15));
-  will-change: transform;
-  margin: 0;
-  flex-shrink: 1;
 }
 
 /* Enhanced tag styling */
@@ -365,39 +367,57 @@ body {
 
 /* ===== OPTIMIZED RESPONSIVE BREAKPOINTS FOR 1350x2760 MOCKUPS ===== */
 
+/* ===== BALANCED RESPONSIVE BREAKPOINTS FOR 1350x2760 MOCKUPS ===== */
+
 /* Small screens (mobile) */
 @media (max-width: 767px) {
+  .swiper-layout {
+    gap: clamp(3rem, 8vw, 4rem);
+    margin-top: clamp(3rem, 8vw, 5rem);
+    padding: clamp(1rem, 3vw, 1.5rem);
+  }
+
   .stable-image-container {
-    min-height: clamp(400px, 65vh, 550px);
-    padding: clamp(1.5rem, 4vw, 2rem) 1rem clamp(1rem, 2vw, 1.5rem) 1rem;
+    padding: clamp(2rem, 5vw, 2.5rem) 1rem clamp(2rem, 5vw, 2.5rem) 1rem;
+    margin-top: 4.5rem;
+    margin-bottom: 4rem;
   }
 
   .stable-image-container:has(.image-dual) {
     gap: 0.75rem;
-    padding: 1.5rem 0.5rem 1rem 0.5rem;
-    min-height: clamp(450px, 70vh, 600px);
-  }
-
-  .stable-image-container .image-dual {
-    max-width: clamp(120px, 32vw, 150px);
+    padding: clamp(2rem, 5vw, 2.5rem) 0.75rem clamp(2rem, 5vw, 2.5rem) 0.75rem;
   }
 }
 
 /* Tablet screens */
 @media (min-width: 768px) and (max-width: 1023px) {
+  :root {
+    --image-single: clamp(260px, 32vw, 320px);
+    --image-dual: clamp(170px, 23vw, 200px);
+  }
+
+  .swiper-layout {
+    gap: clamp(3rem, 5vw, 4rem);
+    margin-top: clamp(3rem, 6vw, 4rem);
+  }
+
   .stable-image-container {
-    min-height: clamp(450px, 60vh, 600px);
-    padding: clamp(2rem, 4vw, 2.5rem) clamp(1rem, 2vw, 1.5rem) clamp(1rem, 2vw, 1.5rem) clamp(1rem, 2vw, 1.5rem);
+    padding: clamp(2rem, 4vw, 2.5rem) clamp(1rem, 2vw, 1.5rem);
+    margin-top: 7rem;
+    margin-bottom: 7rem;
   }
 
   .stable-image-container:has(.image-dual) {
     gap: 1rem;
-    padding: 2rem 1rem 1rem 1rem;
-    min-height: clamp(500px, 65vh, 650px);
+    padding: clamp(2rem, 4vw, 2.5rem) 1rem;
   }
 
   .stable-image-container .image-dual {
-    max-width: clamp(140px, 22vw, 180px);
+    max-width: var(--image-dual);
+  }
+
+  .stable-image-container .image-single {
+    max-width: var(--image-single);
   }
 }
 
