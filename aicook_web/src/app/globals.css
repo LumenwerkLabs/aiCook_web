@@ -17,27 +17,27 @@
   --space-2xl: 4rem;     /* 64px */
   --space-3xl: 6rem;     /* 96px */
 
-  /* Responsive spacing */
+  /* Enhanced responsive spacing */
   --section-padding-y: clamp(3rem, 8vw, 6rem);
   --section-padding-x: clamp(1rem, 4vw, 3rem);
   --card-padding: clamp(1.25rem, 3vw, 2.5rem);
   --content-gap: clamp(1rem, 2.5vw, 2rem);
   
-  /* Image sizing standardization */
-  --image-single: clamp(280px, 35vw, 400px);
-  --image-dual: clamp(220px, 28vw, 320px);
-  --image-large: clamp(300px, 38vw, 450px);
+  /* Improved image sizing with better scaling for 1350x2760 mockups */
+  --image-single: clamp(200px, 25vw, 350px);
+  --image-dual: clamp(160px, 20vw, 280px);
+  --image-large: clamp(220px, 28vw, 400px);
   
-  /* Typography scale */
-  --text-hero: clamp(2rem, 6vw, 5rem);
-  --text-section: clamp(1.5rem, 4vw, 3.5rem);
+  /* Enhanced typography scale with more impact */
+  --text-hero: clamp(2.5rem, 8vw, 6rem);
+  --text-section: clamp(1.75rem, 5vw, 4rem);
   --text-card: clamp(1.25rem, 3vw, 2.5rem);
   --text-body-lg: clamp(1rem, 2vw, 1.5rem);
   --text-body-sm: clamp(0.875rem, 1.5vw, 1.125rem);
   --text-caption: clamp(0.75rem, 1.25vw, 0.875rem);
 }
 
-/* ===== BASE STYLES ===== */
+/* ===== ENHANCED BASE STYLES ===== */
 html {
   scroll-behavior: smooth;
 }
@@ -47,40 +47,53 @@ body {
   color: var(--color-bg-primary);
   font-family: apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   scroll-behavior: smooth;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-/* ===== FONT FACE DECLARATIONS ===== */
+/* ===== OPTIMIZED FONT FACE DECLARATIONS ===== */
 @font-face {
     font-family: 'Melodrama Regular';
     src: url('/fonts/Melodrama-Regular.otf') format('opentype');
     font-display: swap;
+    font-weight: 400;
+    font-style: normal;
 }
 
 @font-face {
     font-family: 'Melodrama Bold';
     src: url('/fonts/Melodrama-Bold.otf') format('opentype');
     font-display: swap;
+    font-weight: 700;
+    font-style: normal;
 }
 
 @font-face {
     font-family: 'Melodrama Light';
     src: url('/fonts/Melodrama-Light.otf') format('opentype');
     font-display: swap;
+    font-weight: 300;
+    font-style: normal;
 }
 
 @font-face {
     font-family: 'Melodrama Medium';
     src: url('/fonts/Melodrama-Medium.otf') format('opentype');
     font-display: swap;
+    font-weight: 500;
+    font-style: normal;
 }
 
 @font-face {
     font-family: 'Melodrama SemiBold';
     src: url('/fonts/Melodrama-SemiBold.otf') format('opentype');
     font-display: swap;
+    font-weight: 600;
+    font-style: normal;
 }
 
-/* ===== STANDARDIZED TYPOGRAPHY CLASSES ===== */
+/* ===== STANDARDIZED TYPOGRAPHY CLASSES (Keep existing naming) ===== */
 .font-melodrama-regular {
   font-family: 'Melodrama Regular', sans-serif;
   letter-spacing: 0.05em;
@@ -126,7 +139,7 @@ body {
   -ms-text-size-adjust: 100%;
 }
 
-/* ===== CONSISTENT TYPOGRAPHY SCALE ===== */
+/* ===== ENHANCED TYPOGRAPHY SCALE ===== */
 .heading-hero {
   font-size: var(--text-hero);
   line-height: 1.1;
@@ -165,15 +178,16 @@ body {
   font-weight: 400;
 }
 
-/* ===== CONSISTENT COMPONENT CLASSES ===== */
+/* ===== ENHANCED COMPONENT CLASSES ===== */
 
-/* Standardized image classes */
+/* Improved image classes with better performance */
 .image-single {
   width: 100%;
   height: auto;
   max-width: var(--image-single);
   object-fit: contain;
   filter: drop-shadow(0 25px 25px rgb(0 0 0 / 0.15));
+  will-change: transform;
 }
 
 .image-dual {
@@ -182,6 +196,7 @@ body {
   min-width: var(--image-dual);
   object-fit: contain;
   filter: drop-shadow(0 25px 25px rgb(0 0 0 / 0.15));
+  will-change: transform;
 }
 
 .image-large {
@@ -190,6 +205,17 @@ body {
   max-width: var(--image-large);
   object-fit: contain;
   filter: drop-shadow(0 25px 25px rgb(0 0 0 / 0.15));
+  will-change: transform;
+}
+
+/* Enhanced tablet sizing to match your LandingPage usage - optimized for 1350x2760 */
+.image-tablet {
+  width: 100%;
+  height: auto;
+  max-width: clamp(200px, 28vw, 420px);
+  object-fit: contain;
+  filter: drop-shadow(0 25px 25px rgb(0 0 0 / 0.15));
+  will-change: transform;
 }
 
 /* Standardized spacing classes */
@@ -205,31 +231,60 @@ body {
   gap: var(--content-gap);
 }
 
-/* Standardized container classes */
+/* Enhanced container classes - Balanced height approach for 1350x2760 mockups */
 .stable-image-container {
   width: 100%;
-  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  /* Tie height to width to avoid huge VH on mobile/desktop */
-  min-height: clamp(320px, 55vw, 620px);
+  min-height: fit-content;
+  height: fit-content;
   position: relative;
-  z-index: 1; /* Lower stacking to avoid overlaying siblings */
-  overflow: visible; /* Allow full image visibility */
-  isolation: isolate; /* Contain stacking context for absolutely positioned children */
+  z-index: 1;
+  overflow: visible;
+  isolation: isolate;
+  padding: clamp(1.5rem, 3vw, 2.5rem) clamp(1rem, 2vw, 2rem);
+}
+
+/* Single image containers */
+.stable-image-container .image-single,
+.stable-image-container .image-large {
+  width: 100%;
+  height: auto;
+  max-width: var(--image-single);
+  filter: drop-shadow(0 25px 25px rgb(0 0 0 / 0.15));
+  will-change: transform;
+}
+
+/* Dual image container specific styling */
+.stable-image-container:has(.image-dual) {
+  justify-content: center;
+  gap: clamp(0.75rem, 2vw, 1.5rem);
+  padding: clamp(1.5rem, 3vw, 2.5rem) clamp(0.5rem, 1vw, 1rem);
 }
 
 .stable-image-container .image-dual {
-  max-width: var(--image-dual);
+  width: 100%;
   height: auto;
-  margin-right: 7rem;
-  margin-left: -5rem;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
+  max-width: var(--image-dual);
+  filter: drop-shadow(0 25px 25px rgb(0 0 0 / 0.15));
+  will-change: transform;
+  margin: 0;
+  flex-shrink: 1;
+  min-height: clamp(500px, 60vh, 750px);
 }
 
-/* Tag standardization */
+.stable-image-container .image-dual {
+  width: 100%;
+  height: auto;
+  max-width: var(--image-dual);
+  filter: drop-shadow(0 25px 25px rgb(0 0 0 / 0.15));
+  will-change: transform;
+  margin: 0;
+  flex-shrink: 1;
+}
+
+/* Enhanced tag styling */
 .tag-base {
   padding: clamp(0.375rem, 1vw, 0.5rem) clamp(0.75rem, 2vw, 1.25rem);
   font-size: var(--text-caption);
@@ -245,40 +300,48 @@ body {
   transform: translateY(-1px);
 }
 
-/* Button standardization */
+/* Enhanced button styling */
 .btn-base {
   padding: clamp(0.75rem, 2vw, 1rem) clamp(1.5rem, 4vw, 2rem);
   border-radius: clamp(0.5rem, 1.5vw, 0.75rem);
   font-size: var(--text-body-sm);
   font-weight: 500;
   transition: all 0.3s ease;
+  cursor: pointer;
 }
 
-/* ===== LAYOUT UTILITIES ===== */
+.btn-base:focus-visible {
+  outline: 2px solid rgba(40, 65, 57, 0.5);
+  outline-offset: 2px;
+}
 
-/* Consistent swiper layout */
+/* ===== ENHANCED LAYOUT UTILITIES ===== */
+
+/* Improved swiper layout with container queries support */
 .swiper-layout {
   display: grid;
   grid-template-columns: 1fr;
-  gap: var(--content-gap);
-  align-items: start; /* Changed from center to start */
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: center;
   width: 100%;
   max-width: 1280px;
   margin: 0 auto;
-  min-height: clamp(400px, 60vh, 800px); /* Ensure minimum height on all devices */
-  padding: clamp(1rem, 4vw, 2rem); /* Add responsive padding */
-  overflow: visible; /* Avoid clipping tall mockups */
+  min-height: fit-content;
+  padding: clamp(1rem, 4vw, 2rem);
+  overflow: visible;
+  margin-top: clamp(2rem, 6vw, 4rem);
 }
 
 @media (min-width: 1024px) {
   .swiper-layout {
     grid-template-columns: 1fr 1fr;
-    gap: calc(var(--content-gap) * 1.5);
-    align-items: center; /* Center align on larger screens */
+    gap: clamp(3rem, 6vw, 5rem);
+    align-items: center;
+    padding: clamp(1.5rem, 3vw, 2.5rem);
   }
 }
 
-/* Description card improvements */
+/* Enhanced description card */
 .description-card {
   background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(12px);
@@ -287,9 +350,11 @@ body {
   border: 1px solid rgba(40, 65, 57, 0.08);
   box-shadow: 0 10px 40px rgba(40, 65, 57, 0.1);
   transition: all 0.3s ease;
-  min-height: clamp(320px, 45vw, 500px); /* Increased consistent minimum height */
+  min-height: fit-content;
+  height: fit-content;
   display: flex;
   flex-direction: column;
+  justify-content: center;
 }
 
 .description-card:hover {
@@ -298,73 +363,129 @@ body {
   transform: translateY(-2px);
 }
 
-/* ===== RESPONSIVE BREAKPOINTS ===== */
+/* ===== OPTIMIZED RESPONSIVE BREAKPOINTS FOR 1350x2760 MOCKUPS ===== */
 
 /* Small screens (mobile) */
-@media (max-width: 640px) {
-  :root {
-    --section-padding-y: 2rem;
-    --section-padding-x: 1rem;
-    --card-padding: 1.25rem;
-    --content-gap: 1rem;
-  }
-  
+@media (max-width: 767px) {
   .stable-image-container {
-    min-height: clamp(420px, 95vw, 560px);
+    min-height: clamp(400px, 65vh, 550px);
+    padding: clamp(1.5rem, 4vw, 2rem) 1rem clamp(1rem, 2vw, 1.5rem) 1rem;
+  }
+
+  .stable-image-container:has(.image-dual) {
+    gap: 0.75rem;
+    padding: 1.5rem 0.5rem 1rem 0.5rem;
+    min-height: clamp(450px, 70vh, 600px);
   }
 
   .stable-image-container .image-dual {
-    padding: 1rem;
-    height: auto;
-    margin-right: -1rem;
-    margin-left: -1rem;
+    max-width: clamp(120px, 32vw, 150px);
+  }
+}
+
+/* Tablet screens */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .stable-image-container {
+    min-height: clamp(450px, 60vh, 600px);
+    padding: clamp(2rem, 4vw, 2.5rem) clamp(1rem, 2vw, 1.5rem) clamp(1rem, 2vw, 1.5rem) clamp(1rem, 2vw, 1.5rem);
   }
 
-  /* Add breathing room below image stack to avoid overlap with text */
+  .stable-image-container:has(.image-dual) {
+    gap: 1rem;
+    padding: 2rem 1rem 1rem 1rem;
+    min-height: clamp(500px, 65vh, 650px);
+  }
+
+  .stable-image-container .image-dual {
+    max-width: clamp(140px, 22vw, 180px);
+  }
+}
+
+/* Desktop screens with good height */
+@media (min-width: 1024px) and (min-height: 700px) {
+  .stable-image-container {
+    min-height: clamp(500px, 55vh, 700px);
+    padding: clamp(2rem, 3vw, 3rem) clamp(1rem, 2vw, 2rem) clamp(1rem, 2vw, 1.5rem) clamp(1rem, 2vw, 2rem);
+  }
+
+  .stable-image-container:has(.image-dual) {
+    gap: clamp(1rem, 2vw, 1.5rem);
+    padding: clamp(2rem, 3vw, 2.5rem) clamp(0.5rem, 1vw, 1rem) clamp(1rem, 2vw, 1.5rem) clamp(0.5rem, 1vw, 1rem);
+    min-height: clamp(550px, 60vh, 750px);
+  }
+
+  .stable-image-container .image-dual {
+    max-width: clamp(160px, 16vw, 220px);
+  }
+}
+
+/* Low-height desktop/laptop screens */
+@media (min-width: 1024px) and (max-height: 699px) {
   .swiper-layout {
-    gap: calc(var(--content-gap) * 1.25);
-    padding-bottom: clamp(2.5rem, 10vw, 4rem); /* Extra room so images don't overlap text */
-  }
-  .stable-image-container img {
-    max-width: 100%;
-    height: auto;
+    min-height: 60vh;
+    gap: 2rem;
+    padding: 1rem;
   }
 
+  .stable-image-container {
+    min-height: 45vh;
+    padding: 1rem 0.5rem 0.5rem 0.5rem;
+  }
+
+  .stable-image-container:has(.image-dual) {
+    gap: 0.75rem;
+    padding: 1rem 0.25rem 0.5rem 0.25rem;
+    min-height: 50vh;
+  }
+
+  .stable-image-container .image-dual {
+    max-width: clamp(120px, 13vw, 160px);
+  }
+
+  .description-card {
+    min-height: 40vh;
+    padding: 1.5rem;
+  }
 }
 
-/* Medium screens (tablet) */
-@media (min-width: 641px) and (max-width: 1024px) {
-  :root {
-    --section-padding-y: 3rem;
-    --section-padding-x: 1.5rem;
-    --card-padding: 1.75rem;
-    --content-gap: 1.5rem;
+/* ===== ACCESSIBILITY ENHANCEMENTS ===== */
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
   
-  .stable-image-container {
-    min-height: clamp(440px, 60vw, 600px);
+  .animate-float-y,
+  .animate-float-x,
+  .animate-slow-rotate,
+  .animate-pulse,
+  .animate-drift {
+    animation: none !important;
   }
 }
 
-/* Large screens (desktop) */
-@media (min-width: 1025px) {
+/* High contrast mode support */
+@media (prefers-contrast: high) {
   :root {
-    --section-padding-y: 4rem;
-    --section-padding-x: 2rem;
-    --card-padding: 2.5rem;
-    --content-gap: 2rem;
+    --color-primary: #1a2e25;
+    --color-primary-light: #2d4038;
   }
   
-  .stable-image-container {
-    min-height: clamp(480px, 45vw, 680px);
+  .description-card {
+    border: 2px solid rgba(40, 65, 57, 0.2);
   }
 }
 
-
-
-/* ===== SCROLLBAR STYLING ===== */
+/* ===== ENHANCED SCROLLBAR STYLING ===== */
 ::-webkit-scrollbar {
   width: 8px;
+  height: 8px;
 }
 
 ::-webkit-scrollbar-track {
@@ -382,19 +503,47 @@ body {
   background: rgba(40, 65, 57, 0.5);
 }
 
-/* ===== SELECTION STYLING ===== */
+::-webkit-scrollbar-corner {
+  background: rgba(40, 65, 57, 0.1);
+}
+
+/* Firefox scrollbar styling */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(40, 65, 57, 0.3) rgba(40, 65, 57, 0.1);
+}
+
+/* ===== ENHANCED SELECTION STYLING ===== */
 ::selection {
   background: rgba(40, 65, 57, 0.2);
   color: var(--color-primary);
+  text-shadow: none;
 }
 
-/* ===== FOCUS STYLES ===== */
-button:focus,
-input:focus,
-textarea:focus,
-select:focus {
-  outline: 2px solid rgba(40, 65, 57, 0.5);
+::-moz-selection {
+  background: rgba(40, 65, 57, 0.2);
+  color: var(--color-primary);
+  text-shadow: none;
+}
+
+/* ===== ENHANCED FOCUS STYLES ===== */
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible,
+a:focus-visible {
+  outline: 2px solid rgba(40, 65, 57, 0.6);
   outline-offset: 2px;
+  border-radius: 3px;
+}
+
+/* Remove default focus styles */
+button:focus:not(:focus-visible),
+input:focus:not(:focus-visible),
+textarea:focus:not(:focus-visible),
+select:focus:not(:focus-visible),
+a:focus:not(:focus-visible) {
+  outline: none;
 }
 
 /* ===== UTILITY CLASSES ===== */
@@ -409,39 +558,40 @@ select:focus {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  color: var(--color-primary); /* Fallback for unsupported browsers */
 }
 
-/* ===== ANIMATION KEYFRAMES ===== */
+/* ===== OPTIMIZED ANIMATION KEYFRAMES ===== */
 @keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translate3d(0, 30px, 0);
   }
   to {
     opacity: 1;
-    transform: translateY(0);
+    transform: translate3d(0, 0, 0);
   }
 }
 
 @keyframes fadeInScale {
   from {
     opacity: 0;
-    transform: scale(0.9);
+    transform: scale3d(0.9, 0.9, 1);
   }
   to {
     opacity: 1;
-    transform: scale(1);
+    transform: scale3d(1, 1, 1);
   }
 }
 
 @keyframes floatY {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-32px); }
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  50% { transform: translate3d(0, -32px, 0); }
 }
 
 @keyframes floatX {
-  0%, 100% { transform: translateX(0); }
-  50% { transform: translateX(32px); }
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  50% { transform: translate3d(32px, 0, 0); }
 }
 
 @keyframes slowRotate {
@@ -450,54 +600,66 @@ select:focus {
 }
 
 @keyframes pulse {
-  0%, 100% { opacity: 0.8; transform: scale(1); }
-  50% { opacity: 1; transform: scale(1.05); }
+  0%, 100% { 
+    opacity: 0.8; 
+    transform: scale3d(1, 1, 1); 
+  }
+  50% { 
+    opacity: 1; 
+    transform: scale3d(1.05, 1.05, 1); 
+  }
 }
 
 @keyframes drift {
-  0%, 100% { transform: translate(0, 0) rotate(0deg); }
-  25% { transform: translate(16px, -16px) rotate(2deg); }
-  50% { transform: translate(0, -32px) rotate(0deg); }
-  75% { transform: translate(-16px, -16px) rotate(-2deg); }
+  0%, 100% { transform: translate3d(0, 0, 0) rotate(0deg); }
+  25% { transform: translate3d(16px, -16px, 0) rotate(2deg); }
+  50% { transform: translate3d(0, -32px, 0) rotate(0deg); }
+  75% { transform: translate3d(-16px, -16px, 0) rotate(-2deg); }
 }
 
-/* ===== ANIMATION CLASSES ===== */
+/* ===== ENHANCED ANIMATION CLASSES ===== */
 .animate-fade-in-up {
-  animation: fadeInUp 0.6s ease-out !important;
-  transition: none !important;
+  animation: fadeInUp 0.6s ease-out forwards !important;
 }
 
 .animate-fade-in-scale {
-  animation: fadeInScale 0.5s ease-out !important;
-  transition: none !important;
+  animation: fadeInScale 0.5s ease-out forwards !important;
 }
 
 .animate-float-y {
   animation: floatY 8s ease-in-out infinite !important;
-  transition: none !important;
   will-change: transform;
 }
 
 .animate-float-x {
   animation: floatX 10s ease-in-out infinite !important;
-  transition: none !important;
   will-change: transform;
 }
 
 .animate-slow-rotate {
   animation: slowRotate 24s linear infinite !important;
-  transition: none !important;
   will-change: transform;
 }
 
 .animate-pulse {
   animation: pulse 4s ease-in-out infinite !important;
-  transition: none !important;
   will-change: transform, opacity;
 }
 
 .animate-drift {
   animation: drift 12s ease-in-out infinite !important;
-  transition: none !important;
   will-change: transform;
+}
+
+/* Performance optimization utilities */
+.will-change-transform {
+  will-change: transform;
+}
+
+.will-change-opacity {
+  will-change: opacity;
+}
+
+.will-change-auto {
+  will-change: auto;
 }

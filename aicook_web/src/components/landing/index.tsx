@@ -50,6 +50,7 @@ export default function LandingPage() {
                   className="image-single drop-shadow-2xl"
                   width={360}
                   height={640}
+                  sizes="(min-width: 1280px) 22vw, (min-width: 1024px) 28vw, (min-width: 640px) 40vw, 80vw"
                   priority
                 />
               </motion.div>
@@ -62,10 +63,10 @@ export default function LandingPage() {
                 <Image
                   src="/mockups/first_screen_iPad.png"
                   alt="First Screen iPad"
-                  className="w-full h-auto drop-shadow-2xl"
+                  className="image-tablet drop-shadow-2xl"
                   width={1024}
                   height={1366}
-                  style={{ width: 'auto', height: 'auto', maxWidth: 'clamp(240px, 35vw, 480px)' }}
+                  sizes="(min-width: 1536px) 28vw, (min-width: 1280px) 32vw, (min-width: 1024px) 38vw, (min-width: 640px) 60vw, 80vw"
                 />
               </motion.div>
             </div>
