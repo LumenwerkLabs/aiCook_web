@@ -5,13 +5,13 @@ import Header from '@/components/header';
 import Footer from '@/components/footer';
 import CookingBackgroundAnimation from '@/components/animations/CookingBackgroundAnimation';
 import IProvider from '@/context/I18nContext';
-import { Inter } from 'next/font/google';
+import { DM_Sans } from 'next/font/google';
 import Script from 'next/script';
 
 // Optimize font loading with Next.js built-in optimization
-const inter = Inter({
+const dmSans = DM_Sans({
   subsets: ['latin'],
-  variable: '--font-inter',
+  variable: '--font-dm-sans',
   display: 'swap',
   preload: true,
 });
@@ -104,7 +104,7 @@ export default function RootLayout({
   children: React.ReactNode 
 }) {
   return (
-    <html lang="en" className={`${inter.variable} scroll-smooth`}>
+    <html lang="en" className={`${dmSans.variable} scroll-smooth`}>
       <head>
         {/* Preconnect to external domains for better performance */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -115,26 +115,12 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
         
         {/* Preload critical fonts */}
-        <link 
-          rel="preload" 
-          href="/fonts/Melodrama-Regular.otf" 
-          as="font" 
-          type="font/otf" 
-          crossOrigin="anonymous" 
-        />
-        <link 
-          rel="preload" 
-          href="/fonts/Melodrama-Medium.otf" 
-          as="font" 
-          type="font/otf" 
-          crossOrigin="anonymous" 
-        />
-        <link 
-          rel="preload" 
-          href="/fonts/Melodrama-Light.otf" 
-          as="font" 
-          type="font/otf" 
-          crossOrigin="anonymous" 
+        <link
+          rel="preload"
+          href="/fonts/Casta-Thin.otf"
+          as="font"
+          type="font/otf"
+          crossOrigin="anonymous"
         />
 
         {/* Google Analytics with Next.js Script */}
@@ -183,57 +169,60 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify([
-              {
-                "@context": "https://schema.org",
-                "@type": "WebApplication",
-                "name": "ai.Cook",
-                "alternateName": "AI Cook",
-                "description": "AI-powered cooking assistant for personalized recipe recommendations, smart ingredient management, and meal planning",
-                "url": "https://aicook.website",
-                "applicationCategory": "LifestyleApplication",
-                "operatingSystem": "iOS, Android, Web",
-                "browserRequirements": "Requires JavaScript. Requires HTML5.",
-                "softwareVersion": "1.0",
-                "releaseNotes": "Initial release with AI-powered recipe recommendations",
-                "offers": {
-                  "@type": "Offer",
-                  "price": "0",
-                  "priceCurrency": "USD",
-                  "availability": "https://schema.org/InStock"
-                },
-                "creator": {
-                  "@type": "Person",
-                  "name": "Lucia Schlegel",
-                  "url": "https://github.com/LuciaSchlegel"
-                },
-                "publisher": {
-                  "@type": "Organization",
-                  "name": "ai.Cook",
-                  "url": "https://aicook.website"
-                },
-                "featureList": [
-                  "AI-powered recipe recommendations",
-                  "Smart ingredient management", 
-                  "Personalized meal planning",
-                  "Nutritional goal tracking",
-                  "Recipe discovery based on available ingredients"
-                ],
-                "screenshot": "https://aicook.website/og-image.jpg"
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebApplication",
+              "name": "ai.Cook",
+              "alternateName": "AI Cook",
+              "description": "AI-powered cooking assistant for personalized recipe recommendations, smart ingredient management, and meal planning",
+              "url": "https://aicook.website",
+              "applicationCategory": "LifestyleApplication",
+              "operatingSystem": "iOS, Android, Web",
+              "browserRequirements": "Requires JavaScript. Requires HTML5.",
+              "softwareVersion": "1.0",
+              "releaseNotes": "Initial release with AI-powered recipe recommendations",
+              "offers": {
+                "@type": "Offer",
+                "price": "0",
+                "priceCurrency": "USD",
+                "availability": "https://schema.org/InStock"
               },
-              {
-                "@context": "https://schema.org",
+              "creator": {
+                "@type": "Person",
+                "name": "Lucia Schlegel",
+                "url": "https://github.com/LuciaSchlegel"
+              },
+              "publisher": {
                 "@type": "Organization",
                 "name": "ai.Cook",
-                "url": "https://aicook.website",
-                "logo": "https://aicook.website/favicon.svg",
-                "foundingDate": "2024",
-                "description": "AI-powered cooking assistant platform",
-                "sameAs": [
-                  "https://twitter.com/aiCookApp"
-                ]
-              }
-            ])
+                "url": "https://aicook.website"
+              },
+              "featureList": [
+                "AI-powered recipe recommendations",
+                "Smart ingredient management",
+                "Personalized meal planning",
+                "Nutritional goal tracking",
+                "Recipe discovery based on available ingredients"
+              ],
+              "screenshot": "https://aicook.website/og-image.jpg"
+            })
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              "name": "ai.Cook",
+              "url": "https://aicook.website",
+              "logo": "https://aicook.website/favicon.svg",
+              "foundingDate": "2024",
+              "description": "AI-powered cooking assistant platform",
+              "sameAs": [
+                "https://twitter.com/aiCookApp"
+              ]
+            })
           }}
         />
       </body>

@@ -54,15 +54,14 @@ export function AnimatedWelcome() {
             className="flex flex-col items-center max-w-5xl mx-auto"
           >
             <h1
-              className="font-melodrama-regular text-5xl xs:text-6xl sm:text-7xl md:text-8xl lg:text-9xl xl:text-[10rem] font-light tracking-wider text-center leading-tight"
+              className="font-casta-regular text-5xl xs:text-6xl sm:text-7xl md:text-8xl lg:text-9xl xl:text-[10rem] font-light tracking-wider text-center leading-tight"
               style={{
                 textShadow: '0 0 10px rgba(0, 0, 0, 0.1), 0 1px 8px rgba(255,255,255,0.3)'
               }}
             >
               {t('animations.title', 'ai.Cook')}
             </h1>
-            <p className="font-melodrama-light text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl mt-3 sm:mt-4 lg:mt-6 text-center max-w-3xl px-4 leading-relaxed" 
-               style={{ letterSpacing: '0.05em' }}>
+            <p className="font-light tracking-wide text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl mt-3 sm:mt-4 lg:mt-6 text-center max-w-3xl px-4 leading-relaxed">
               {t('animations.subtitle', 'Your personal AI-powered cooking assistant.')}
             </p>
           </motion.div>

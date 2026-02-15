@@ -45,7 +45,7 @@ html {
 body {
   background-color: var(--color-primary);
   color: var(--color-bg-primary);
-  font-family: apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: var(--font-dm-sans), 'DM Sans', system-ui, -apple-system, sans-serif;
   scroll-behavior: smooth;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -54,128 +54,100 @@ body {
 
 /* ===== OPTIMIZED FONT FACE DECLARATIONS ===== */
 @font-face {
-    font-family: 'Melodrama Regular';
-    src: url('/fonts/Melodrama-Regular.otf') format('opentype');
+    font-family: 'Casta';
+    src: url('/fonts/Casta-Thin.otf') format('opentype');
     font-display: swap;
-    font-weight: 400;
+    font-weight: 100;
     font-style: normal;
 }
 
-@font-face {
-    font-family: 'Melodrama Bold';
-    src: url('/fonts/Melodrama-Bold.otf') format('opentype');
-    font-display: swap;
-    font-weight: 700;
-    font-style: normal;
+/* ===== CASTA TYPOGRAPHY HIERARCHY =====
+   Single-weight (Thin) editorial design system.
+   Hierarchy is achieved through letter-spacing, line-height,
+   and word-spacing rather than font-weight variation.
+   ========================================= */
+
+/* Medium — Section titles (h1): wide, commanding, editorial presence */
+.font-casta-medium {
+  font-family: 'Casta', serif;
+  letter-spacing: 0.14em;
+  line-height: 1.15;
+  word-spacing: 0.05em;
+  text-rendering: optimizeLegibility;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
 }
 
-@font-face {
-    font-family: 'Melodrama Light';
-    src: url('/fonts/Melodrama-Light.otf') format('opentype');
-    font-display: swap;
-    font-weight: 300;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Melodrama Medium';
-    src: url('/fonts/Melodrama-Medium.otf') format('opentype');
-    font-display: swap;
-    font-weight: 500;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Melodrama SemiBold';
-    src: url('/fonts/Melodrama-SemiBold.otf') format('opentype');
-    font-display: swap;
-    font-weight: 600;
-    font-style: normal;
-}
-
-/* ===== STANDARDIZED TYPOGRAPHY CLASSES (Keep existing naming) ===== */
-.font-melodrama-regular {
-  font-family: 'Melodrama Regular', sans-serif;
-  letter-spacing: 0.05em;
+/* Regular — Card headings (h2), subtitles, footer: balanced workhorse */
+.font-casta-regular {
+  font-family: 'Casta', serif;
+  letter-spacing: 0.06em;
   line-height: 1.5;
+  word-spacing: 0.02em;
   text-rendering: optimizeLegibility;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
 }
 
-.font-melodrama-bold {
-  font-family: 'Melodrama Bold', sans-serif;
-  letter-spacing: 0.05em;
-  line-height: 1.4;
+/* Light — Supporting text, captions, whispered accents: airy, delicate */
+.font-casta-light {
+  font-family: 'Casta', serif;
+  letter-spacing: 0.08em;
+  line-height: 1.7;
+  word-spacing: 0.03em;
   text-rendering: optimizeLegibility;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
 }
 
-.font-melodrama-light {
-  font-family: 'Melodrama Light', sans-serif;
-  letter-spacing: 0.05em;
-  line-height: 1.6;
+/* Bold — High-impact accent (available for future use): dramatic, open */
+.font-casta-bold {
+  font-family: 'Casta', serif;
+  letter-spacing: 0.18em;
+  line-height: 1.1;
+  word-spacing: 0.06em;
   text-rendering: optimizeLegibility;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
 }
 
-.font-melodrama-medium {
-  font-family: 'Melodrama Medium', sans-serif;
-  letter-spacing: 0.05em;
-  line-height: 1.4;
+/* SemiBold — Emphasis (available for future use): structured, clear */
+.font-casta-semibold {
+  font-family: 'Casta', serif;
+  letter-spacing: 0.10em;
+  line-height: 1.3;
+  word-spacing: 0.04em;
   text-rendering: optimizeLegibility;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
 }
 
-.font-melodrama-semibold {
-  font-family: 'Melodrama SemiBold', sans-serif;
-  letter-spacing: 0.05em;
-  line-height: 1.4;
-  text-rendering: optimizeLegibility;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-}
-
-/* ===== ENHANCED TYPOGRAPHY SCALE ===== */
+/* ===== TYPOGRAPHY SCALE =====
+   Size-only classes. Spacing, line-height, and weight
+   are handled by the .font-casta-* hierarchy classes.
+   ========================================= */
 .heading-hero {
   font-size: var(--text-hero);
-  line-height: 1.1;
-  font-weight: 500;
-  letter-spacing: -0.02em;
 }
 
 .heading-section {
   font-size: var(--text-section);
-  line-height: 1.2;
-  font-weight: 400;
-  letter-spacing: -0.01em;
 }
 
 .heading-card {
   font-size: var(--text-card);
-  line-height: 1.3;
-  font-weight: 400;
 }
 
 .text-body-large {
   font-size: var(--text-body-lg);
-  line-height: 1.6;
-  font-weight: 300;
 }
 
 .text-body-small {
   font-size: var(--text-body-sm);
-  line-height: 1.5;
-  font-weight: 300;
 }
 
 .text-caption {
   font-size: var(--text-caption);
-  line-height: 1.4;
-  font-weight: 400;
 }
 
 /* ===== ENHANCED COMPONENT CLASSES ===== */
@@ -231,31 +203,16 @@ body {
   gap: var(--content-gap);
 }
 
-/* Enhanced container classes - Balanced approach for mobile */
+/* Image container for swiper slides */
 .stable-image-container {
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: fit-content;
-  height: fit-content;
-  position: relative;
-  z-index: 1;
-  overflow: visible;
-  isolation: isolate;
-  padding: clamp(1.5rem, 3vw, 2.5rem) clamp(1rem, 2vw, 2rem);
+  padding: clamp(1rem, 2vw, 1.5rem) clamp(1rem, 2vw, 2rem);
 }
 
 /* Mobile-specific container adjustments */
-@media (max-width: 767px) {
-  .stable-image-container {
-    margin-bottom: clamp(1.5rem, 4vw, 2rem);
-  }
-  
-  .stable-image-container:has(.image-dual) {
-    margin-bottom: clamp(2rem, 5vw, 2.5rem);
-  }
-}
 
 /* Single image containers */
 .stable-image-container .image-single,
@@ -283,7 +240,6 @@ body {
   will-change: transform;
   margin: 0;
   flex-shrink: 1;
-  min-height: clamp(500px, 60vh, 750px);
 }
 
 /* Enhanced tag styling */
@@ -343,26 +299,22 @@ body {
   }
 }
 
-/* Enhanced description card */
+/* Description card — minimal, editorial */
 .description-card {
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(12px);
-  border-radius: clamp(1rem, 2vw, 1.5rem);
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: clamp(0.75rem, 1.5vw, 1rem);
   padding: var(--card-padding);
-  border: 1px solid rgba(40, 65, 57, 0.08);
-  box-shadow: 0 10px 40px rgba(40, 65, 57, 0.1);
-  transition: all 0.3s ease;
+  border: 1px solid rgba(40, 65, 57, 0.06);
   min-height: fit-content;
   height: fit-content;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  transition: background 0.4s ease;
 }
 
 .description-card:hover {
-  background: rgba(255, 255, 255, 0.9);
-  box-shadow: 0 15px 50px rgba(40, 65, 57, 0.15);
-  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.7);
 }
 
 /* ===== OPTIMIZED RESPONSIVE BREAKPOINTS FOR 1350x2760 MOCKUPS ===== */
@@ -372,20 +324,18 @@ body {
 /* Small screens (mobile) */
 @media (max-width: 767px) {
   .swiper-layout {
-    gap: clamp(3rem, 8vw, 4rem);
-    margin-top: clamp(3rem, 8vw, 5rem);
+    gap: clamp(2rem, 5vw, 3rem);
+    margin-top: clamp(2rem, 5vw, 3rem);
     padding: clamp(1rem, 3vw, 1.5rem);
   }
 
   .stable-image-container {
-    padding: clamp(2rem, 5vw, 2.5rem) 1rem clamp(2rem, 5vw, 2.5rem) 1rem;
-    margin-top: 4.5rem;
-    margin-bottom: 4rem;
+    padding: clamp(1rem, 3vw, 1.5rem) 1rem;
   }
 
   .stable-image-container:has(.image-dual) {
     gap: 0.75rem;
-    padding: clamp(2rem, 5vw, 2.5rem) 0.75rem clamp(2rem, 5vw, 2.5rem) 0.75rem;
+    padding: clamp(1rem, 3vw, 1.5rem) 0.75rem;
   }
 }
 
@@ -397,19 +347,17 @@ body {
   }
 
   .swiper-layout {
-    gap: clamp(3rem, 5vw, 4rem);
-    margin-top: clamp(3rem, 6vw, 4rem);
+    gap: clamp(2rem, 4vw, 3rem);
+    margin-top: clamp(2rem, 4vw, 3rem);
   }
 
   .stable-image-container {
-    padding: clamp(2rem, 4vw, 2.5rem) clamp(1rem, 2vw, 1.5rem);
-    margin-top: 7rem;
-    margin-bottom: 7rem;
+    padding: clamp(1.5rem, 3vw, 2rem) clamp(1rem, 2vw, 1.5rem);
   }
 
   .stable-image-container:has(.image-dual) {
     gap: 1rem;
-    padding: clamp(2rem, 4vw, 2.5rem) 1rem;
+    padding: clamp(1.5rem, 3vw, 2rem) 1rem;
   }
 
   .stable-image-container .image-dual {
@@ -424,14 +372,12 @@ body {
 /* Desktop screens with good height */
 @media (min-width: 1024px) and (min-height: 700px) {
   .stable-image-container {
-    min-height: clamp(500px, 55vh, 700px);
-    padding: clamp(2rem, 3vw, 3rem) clamp(1rem, 2vw, 2rem) clamp(1rem, 2vw, 1.5rem) clamp(1rem, 2vw, 2rem);
+    padding: clamp(1.5rem, 2vw, 2rem) clamp(1rem, 2vw, 2rem);
   }
 
   .stable-image-container:has(.image-dual) {
     gap: clamp(1rem, 2vw, 1.5rem);
-    padding: clamp(2rem, 3vw, 2.5rem) clamp(0.5rem, 1vw, 1rem) clamp(1rem, 2vw, 1.5rem) clamp(0.5rem, 1vw, 1rem);
-    min-height: clamp(550px, 60vh, 750px);
+    padding: clamp(1.5rem, 2vw, 2rem) clamp(0.5rem, 1vw, 1rem);
   }
 
   .stable-image-container .image-dual {
@@ -442,20 +388,17 @@ body {
 /* Low-height desktop/laptop screens */
 @media (min-width: 1024px) and (max-height: 699px) {
   .swiper-layout {
-    min-height: 60vh;
     gap: 2rem;
     padding: 1rem;
   }
 
   .stable-image-container {
-    min-height: 45vh;
-    padding: 1rem 0.5rem 0.5rem 0.5rem;
+    padding: 1rem 0.5rem;
   }
 
   .stable-image-container:has(.image-dual) {
     gap: 0.75rem;
-    padding: 1rem 0.25rem 0.5rem 0.25rem;
-    min-height: 50vh;
+    padding: 1rem 0.25rem;
   }
 
   .stable-image-container .image-dual {
@@ -463,7 +406,6 @@ body {
   }
 
   .description-card {
-    min-height: 40vh;
     padding: 1.5rem;
   }
 }

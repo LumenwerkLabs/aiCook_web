@@ -1,6 +1,42 @@
 "use client";
 import { motion, useReducedMotion } from "framer-motion";
-import React from "react";
+import React, { useRef, useState, useEffect } from "react";
+
+/**
+ * Custom hook that detects element visibility via getBoundingClientRect
+ * on mount (handles hash navigation) plus Intersection Observer for scroll.
+ */
+function useVisibleOnce(threshold = 0.1) {
+  const ref = useRef<HTMLDivElement>(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+
+    // Immediate check — handles hash navigation / already in view
+    const rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight && rect.bottom > 0) {
+      setIsVisible(true);
+      return;
+    }
+
+    // Otherwise fall back to Intersection Observer for scroll
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [threshold]);
+
+  return { ref, isVisible };
+}
 
 interface FadeInMotionProps {
   children: React.ReactNode;
@@ -14,33 +50,21 @@ export const FadeInMotion: React.FC<FadeInMotionProps> = ({
   duration = 0.8,
   className = "",
 }) => {
+  const { ref, isVisible } = useVisibleOnce(0.1);
   const shouldReduceMotion = useReducedMotion();
-  
-  const variants = {
-    hidden: { 
-      opacity: 0, 
-      y: shouldReduceMotion ? 0 : 20,
-    },
-    visible: { 
-      opacity: 1, 
-      y: 0,
-    }
-  };
 
   return (
     <motion.div
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, amount: 0.3, margin: "0px 0px -100px 0px" }}
-      transition={{ 
-        duration: shouldReduceMotion ? 0.1 : duration, 
-        delay: shouldReduceMotion ? 0 : delay, 
+      ref={ref}
+      initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 20 }}
+      animate={isVisible ? { opacity: 1, y: 0 } : undefined}
+      transition={{
+        duration: shouldReduceMotion ? 0.1 : duration,
+        delay: shouldReduceMotion ? 0 : delay,
         ease: [0.25, 0.46, 0.45, 0.94],
         type: "tween"
       }}
-      variants={variants}
       className={className}
-      data-framer-motion
     >
       {children}
     </motion.div>
@@ -64,33 +88,21 @@ export const ZoomInMotion: React.FC<ZoomInMotionProps> = ({
   duration = 0.9,
   className = "",
 }) => {
+  const { ref, isVisible } = useVisibleOnce(0.1);
   const shouldReduceMotion = useReducedMotion();
-  
-  const variants = {
-    hidden: { 
-      opacity: 0, 
-      scale: shouldReduceMotion ? 1 : 0.9,
-    },
-    visible: { 
-      opacity: 1, 
-      scale: 1,
-    }
-  };
 
   return (
     <motion.div
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, amount: 0.2, margin: "0px 0px -50px 0px" }}
-      transition={{ 
-        duration: shouldReduceMotion ? 0.1 : duration, 
-        delay: shouldReduceMotion ? 0 : delay, 
+      ref={ref}
+      initial={{ opacity: 0, scale: shouldReduceMotion ? 1 : 0.9 }}
+      animate={isVisible ? { opacity: 1, scale: 1 } : undefined}
+      transition={{
+        duration: shouldReduceMotion ? 0.1 : duration,
+        delay: shouldReduceMotion ? 0 : delay,
         ease: [0.25, 0.46, 0.45, 0.94],
         type: "tween"
       }}
-      variants={variants}
       className={className}
-      data-framer-motion
     >
       {children}
     </motion.div>

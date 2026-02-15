@@ -22,8 +22,8 @@ module.exports = {
         mutedWhite: "#E8E4D9",
       },
       fontFamily: {
-        melodrama: ['Melodrama', 'sans-serif'],
-        inter: ['Inter', 'sans-serif'],
+        casta: ['Casta', 'serif'],
+        'dm-sans': ['DM Sans', 'sans-serif'],
       },
       spacing: {
         '18': '4.5rem',

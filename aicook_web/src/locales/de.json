@@ -93,6 +93,27 @@
     }
   },
 
+  "about": {
+    "label": "Über uns",
+    "purpose": {
+      "title": "Zweck",
+      "p1": "Wir verschwenden Essen, wiederholen dieselben Gerichte und kämpfen darum, uns gut zu ernähren — nicht weil es uns egal ist, sondern weil uns die richtige Orientierung im richtigen Moment fehlt. ai.Cook existiert, um das zu ändern.",
+      "p2": "ai.Cook ist ein KI-gestützter Küchenbegleiter, der die Lücke zwischen dem, was in deiner Küche ist, und dem, was deinen Körper nährt, schließt. Es verwaltet deine Zutaten, empfiehlt Rezepte passend zu deiner Zeit und deinen Vorlieben und passt sich deinen Ernährungs- und Nährstoffbedürfnissen an — alles an einem Ort."
+    },
+    "vision": {
+      "title": "Vision",
+      "p1": "Wir glauben, dass Kochen keine lästige Pflicht ist — es ist ein täglicher Akt der Fürsorge für dich selbst und die Menschen um dich herum. Essen verbindet Körper, Geist und Wohlbefinden. Unsere Vision ist es, diese Verbindung mühelos zu machen.",
+      "p2": "ai.Cook verfolgt einen ganzheitlichen Ansatz: was du isst, wie viel Zeit du hast, was dein Körper braucht und welche Zutaten bereits vorhanden sind. Technologie sollte dies unterstützen — leise, intelligent, ohne im Weg zu stehen."
+    },
+    "approach": {
+      "title": "Ansatz",
+      "p1": "Jedes Rezept in ai.Cook ist von Menschen erstellt und überprüft. Wir nutzen KI, um die richtige Übereinstimmung für dich zu finden — nicht um Inhalte zu generieren. Die Intelligenz liegt in der Kuration, nicht in der Kreation.",
+      "p2": "Angetrieben von Apple Intelligence läuft ai.Cook vollständig auf deinem Gerät. Keine Daten verlassen dein Handy. Keine Werbung. Kein Tracking. Deine Küche, deine Regeln."
+    },
+    "cta": "Interessiert?",
+    "ctaLink": "Der Warteliste beitreten"
+  },
+
   "footer": {
     "aiCook": "ai.Cook",
     "contactUs": "Kontakt",

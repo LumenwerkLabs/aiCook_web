@@ -93,6 +93,27 @@
     }
   },
 
+  "about": {
+    "label": "About",
+    "purpose": {
+      "title": "Purpose",
+      "p1": "We waste food, repeat the same meals, and struggle to eat well — not because we don't care, but because we lack the right guidance at the right moment. ai.Cook exists to change that.",
+      "p2": "ai.Cook is an AI-enhanced cooking companion designed to bridge the gap between what's in your kitchen and what nourishes your body. It manages your household ingredients, recommends recipes tailored to your time and preferences, and adapts to your dietary and nutritional needs — all in one place."
+    },
+    "vision": {
+      "title": "Vision",
+      "p1": "We believe cooking is not a chore — it's a daily act of care for yourself and the people around you. Food connects body, mind, and well-being. Our vision is to make that connection effortless.",
+      "p2": "ai.Cook takes a holistic view: what you eat, how much time you have, what your body needs, and what ingredients are already at hand. Technology should support this — quietly, intelligently, without getting in the way."
+    },
+    "approach": {
+      "title": "Approach",
+      "p1": "Every recipe in ai.Cook is human-created and reviewed. We use AI to find the right match for you — not to generate content. The intelligence is in the curation, not the creation.",
+      "p2": "Powered by Apple Intelligence, ai.Cook runs entirely on your device. No data leaves your phone. No ads. No tracking. Your kitchen, your rules."
+    },
+    "cta": "Interested?",
+    "ctaLink": "Join the waitlist"
+  },
+
   "footer": {
     "aiCook": "ai.Cook",
     "contactUs": "Contact",

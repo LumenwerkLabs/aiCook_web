@@ -16,19 +16,29 @@ export default function Header() {
     };
 
     window.addEventListener("scroll", handleScroll);
+
+    // Clean up URL hash after page settles to prevent auto-scroll on reload
+    if (window.location.hash) {
+      requestAnimationFrame(() => {
+        window.history.replaceState(null, '', window.location.pathname);
+      });
+    }
+
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    e.preventDefault();
     const targetId = e.currentTarget.getAttribute('href')?.replace('/#', '');
     if (targetId) {
       const targetElement = document.getElementById(targetId);
       if (targetElement) {
+        e.preventDefault();
         targetElement.scrollIntoView({
           behavior: 'smooth',
           block: 'start',
         });
+        // Remove hash so reload doesn't auto-scroll
+        window.history.replaceState(null, '', window.location.pathname);
       }
     }
   };
@@ -52,7 +62,7 @@ export default function Header() {
       <div className="flex justify-between items-center px-4 py-3 sm:px-6 sm:py-4 lg:px-8 lg:py-5 transition-all duration-500 max-w-7xl mx-auto">
         {/* Left Navigation */}
         <Link
-          href="/#bot-and-recipes"
+          href="/#product"
           onClick={handleSmoothScroll}
           className="text-body-small transition-all duration-300 hover:scale-105 active:scale-95 text-[#284139] font-light tracking-wide"
           style={{ textShadow: '0 1px 2px rgba(40, 65, 57, 0.1)' }}
@@ -82,8 +92,7 @@ export default function Header() {
         {/* Right Section - About Link and Language Selector */}
         <div className="flex items-center gap-3 sm:gap-4 lg:gap-6">
           <Link
-            href="/#product"
-            onClick={handleSmoothScroll}
+            href="/about"
             className="text-body-small transition-all duration-300 hover:scale-105 active:scale-95 text-[#284139] font-light tracking-wide"
             style={{ textShadow: '0 1px 2px rgba(40, 65, 57, 0.1)' }}
           >

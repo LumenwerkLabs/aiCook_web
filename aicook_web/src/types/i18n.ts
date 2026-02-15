@@ -45,6 +45,14 @@ export enum SupportedLocales {
       descriptions: Record<string, string>
       tags: Record<string, string>
     }
+    about: {
+      label: string
+      purpose: { title: string; p1: string; p2: string }
+      vision: { title: string; p1: string; p2: string }
+      approach: { title: string; p1: string; p2: string }
+      cta: string
+      ctaLink: string
+    }
     footer: {
       aiCook: string
       contactUs: string
@@ -73,6 +81,18 @@ export enum SupportedLocales {
     | `product.headers.${string}`
     | `product.descriptions.${string}`
     | `product.tags.${string}`
+    | 'about.label'
+    | 'about.purpose.title'
+    | 'about.purpose.p1'
+    | 'about.purpose.p2'
+    | 'about.vision.title'
+    | 'about.vision.p1'
+    | 'about.vision.p2'
+    | 'about.approach.title'
+    | 'about.approach.p1'
+    | 'about.approach.p2'
+    | 'about.cta'
+    | 'about.ctaLink'
     | 'footer.aiCook'
     | 'footer.contactUs'
     | 'footer.copyright'

@@ -89,7 +89,7 @@ export default function AiAndRecipes() {
   const descriptions = [
     // Description 1
     <div key="desc-1" className="space-y-4 md:space-y-6">
-      <h2 className="heading-card font-melodrama-regular text-[#284139] leading-tight tracking-wide">
+      <h2 className="heading-card font-light text-[#284139] leading-tight tracking-wide">
         {isReady ? t('aiAndRecipes.headers.1', 'Smart Recommendations') : 'Smart Recommendations'}
       </h2>
       <div className="space-y-4">
@@ -115,7 +115,7 @@ export default function AiAndRecipes() {
 
     // Description 2
     <div key="desc-2" className="space-y-4 md:space-y-6">
-      <h2 className="heading-card font-melodrama-regular text-[#284139] leading-tight tracking-wide">
+      <h2 className="heading-card font-light text-[#284139] leading-tight tracking-wide">
         {isReady ? t('aiAndRecipes.headers.2', 'Tailored-to-you Recipes') : 'Tailored-to-you Recipes'}
       </h2>
       <div className="space-y-4">
@@ -141,7 +141,7 @@ export default function AiAndRecipes() {
 
     // Description 3
     <div key="desc-3" className="space-y-4 md:space-y-6">
-      <h2 className="heading-card font-melodrama-regular text-[#284139] leading-tight tracking-wide">
+      <h2 className="heading-card font-light text-[#284139] leading-tight tracking-wide">
         {isReady ? t('aiAndRecipes.headers.3', 'Restaurant-quality Results') : 'Restaurant-quality Results'}
       </h2>
       <div className="space-y-4">
@@ -164,7 +164,7 @@ export default function AiAndRecipes() {
 
     // Description 4
     <div key="desc-4" className="space-y-4 md:space-y-6">
-      <h2 className="heading-card font-melodrama-regular text-[#284139] leading-tight tracking-wide">
+      <h2 className="heading-card font-light text-[#284139] leading-tight tracking-wide">
         {isReady ? t('aiAndRecipes.headers.4', 'Your Personalized Cookbook') : 'Your Personalized Cookbook'}
       </h2>
       <div className="space-y-4">
@@ -187,7 +187,7 @@ export default function AiAndRecipes() {
 
     // Description 5
     <div key="desc-5" className="space-y-4 md:space-y-6">
-      <h2 className="heading-card font-melodrama-regular text-[#284139] leading-tight tracking-wide">
+      <h2 className="heading-card font-light text-[#284139] leading-tight tracking-wide">
         {isReady ? t('aiAndRecipes.headers.5', 'Save and Share') : 'Save and Share'}
       </h2>
       <div className="space-y-4">
@@ -216,10 +216,10 @@ export default function AiAndRecipes() {
       <FadeInMotion>
         <div className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-24 sm:mb-28 lg:mb-32">
-            <h1 className="heading-hero font-melodrama-medium text-[#284139] mb-6 leading-tight">
+            <h1 className="heading-hero font-extralight tracking-wider text-[#284139] mb-6 leading-tight">
               {isReady ? t('aiAndRecipes.title', 'The Only Cookbook You\'ll Ever Need') : 'The Only Cookbook You\'ll Ever Need'}
             </h1>
-            <p className="text-body-large text-[#284139]/70 max-w-4xl mx-auto font-melodrama-regular leading-relaxed">
+            <p className="text-body-large text-[#284139]/70 max-w-4xl mx-auto font-light leading-relaxed">
               {isReady ? t('aiAndRecipes.subtitle', 'Discover personalized recipes tailored to your pantry and preferences. All displayed in a beautiful, state-of-the-art user interface.') : 'Discover personalized recipes tailored to your pantry and preferences. All displayed in a beautiful, state-of-the-art user interface.'}
             </p>
           </div>
